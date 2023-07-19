@@ -47,7 +47,7 @@ def custom_loss(y_true, y_pred):
     
     return doubled_loss
 
-traj = "C:\\Users\\PM263553\\Desktop\\finance\\Git\\test_simple\\resultat"
+traj = "C:\\Users\\PM263553\\Desktop\\finance\\Git\\DL_visionary\\resultat"
 
 
 fct_3 = 'tanh'

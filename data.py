@@ -1,4 +1,3 @@
-
 from binance.client import Client
 from apiKeys import apiSecretKey
 from apiKeys import apiKey
