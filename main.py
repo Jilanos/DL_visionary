@@ -13,6 +13,7 @@ from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.layers import Input, Conv1D, Flatten, Dense
 from tensorflow.keras.optimizers import Adam
 from keras.layers import LSTM
+from tensorflow.keras.utils import plot_model
 
 def path(path):
     if not os.path.isdir(path): # check if folder exists, otherwise create it

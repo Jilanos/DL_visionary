@@ -6,7 +6,7 @@ import pickle
 from os.path import exists
 
 
-def loadData(paire : str = "BTCUSDT", sequenceLength : int = 100, interval_str : str = "15m", trainProp : float = 0.7, validProp : float = 0.2, testProp : float = 0.1, numPartitions : int = 5, reload : bool = True, ignoreTimer : int = 50) :
+def loadData(paire : str = "BTCUSDT", sequenceLength : int = 100, interval_str : str = "15m",numPartitions : int = 5, reload : bool = True) :
         # Check variable types and values
     assert isinstance(paire, str), f"[Type Error] :: <paire> should be a str (got '{type(paire)}' instead)."
     validPaires = ["BTCUSDT", "ETHUSDT", "DOGEUSDT","BTCBUSD"]
@@ -18,6 +18,7 @@ def loadData(paire : str = "BTCUSDT", sequenceLength : int = 100, interval_str :
     assert interval_str in validIntervals, f"[Value Error] :: <interval_str> should be one of {validIntervals} (got '{interval_str}' instead)."
         # Format request
     intervalValue, intervalUnit = (int(interval_str[:-1]), interval_str[-1])
+    ignoreTimer = 150
     duration = (sequenceLength+ignoreTimer) * intervalValue
     perday=24*60/intervalValue
     if intervalUnit == "h" :
